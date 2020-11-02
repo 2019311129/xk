@@ -18,42 +18,54 @@
 2. 将四个主类名字分别命名为People，然后用另外两个类Student，Teacher分别设置为People的子类，并用super（）将父类People中的编号、姓名、性别继承。在输出语句中用toString（）方法。
 3. 随后在Test主类里面设置了教师信息、学生信息、课程信息。
 4. 利用循环和import java.util.Scanner设置一个后台输入系统。通过识别输入的数字来确定学生所对应的授课课程和该课程的老师。
-### 实验方法
+
 
 ### 核心代码
 ```
-package text2;
-class PC{
-	CPU cpu;
-	HardDisk HD;
-	void setHardDisk(HardDisk HD){
-		this.HD = HD;
-	}
-	void show(){
-		System.out.println("电脑CPU速度：" + cpu.getSpeed());
-		System.out.println("电脑硬盘容量：" + HD.getAmount());
-		System.out.println("硬盘种类：" + HD.getType());
-	}
-	void setCPU(CPU cpu){
-		this.cpu = cpu;
-	}
-}
-public class text{
-	public static void main(String args[]){
-		CPU cpu = new CPU();
-		HardDisk HD = new HardDisk();
-		cpu.setSpeed(2000);
-		HD.setAmount(500);
-		PC pc = new PC();
-		pc.setCPU(cpu);
-		pc.setHardDisk(HD);
-		pc.show();
-		
-	}
-}
+package experiment3（teacher）;
+
+public class Teacher {
+	  private int id;
+	  private char sex;
+	  private String teacherName;
+	  private Course[] courses;
+	  //构造函数
+	  public Teacher() {
+	   super();
+	   
+	   courses= new Course[1];
+	  }
+	  public Teacher(int id,String teacherName,char i){
+	   this.id=id;
+	   this.teacherName=teacherName;
+	   this.sex=i;
+	   i ='男';
+	   courses = new Course[1];
+	  }
+	  char i ='男';
+	  //修改或是添加属性
+	  
+	  package experiment3;
+	  
+	  public class people {
+	  private int id;
+	  private char sex;
+	  private String peopleName;
+	  private Course[] courses;
+	  public people() {
+	   super();
+	   courses= new Course[1];
+	  }
+	  public people(int id,String peopleName,char sex){
+	    this.id=id;
+	    this.peopleName=peopleName;
+	    this.sex=sex;
+	    courses = new Course[1];
+	   }
+	
 ```
 ## 实验图片
-(https://github.com/2019311129/text/blob/main/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/f37fdcd8640032d529f48e69a2c4afa.png)
+
 
 ## 实验感想
-通过实验熟悉了类的创建和基本数据类型使用，以及类的组合与替代。我学会类、方法的构建。不同函数的构建和引用，体会到了修饰符private的用法。并学会了将一个程序分成多个包进行分装，将运行方法的访问限制修饰符改变，让不同包能跨包运行。
+
