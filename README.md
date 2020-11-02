@@ -19,53 +19,87 @@
 3. 随后在Test主类里面设置了教师信息、学生信息、课程信息。
 4. 利用循环和import java.util.Scanner设置一个后台输入系统。通过识别输入的数字来确定学生所对应的授课课程和该课程的老师。
 
-
+### 实验步骤
+（1）学生引用父类子类 找出学生信息：  姓名 学号 性别 所选课程信息
+（2）教师引用父类子类 找出教师信息:  编号 姓名 性别 所授课程
+（3）课程信息 课程编号上课地点 课程时间 课程学分
+（4）
 ### 核心代码
 ```
-package experiment3（teacher）;
+学生
+public class Student extends people {  //子类
+    public Student(int number, String name, char sex,Course a){
+        super(number,name,sex);
+        this.a = a;
+    }
+    public String toString(){
+        return  "\n" + "student(学生信息):  姓名：" + name
+                + "    学号：" + number + "   性别：" + sex + "\n" + "所选课程信息:   " + a;
+    }
+    }
+    课程
+    public class Course {
+    int number;
+    String coursesname;
+    String place;
+    float time;
+    float score;
 
-public class Teacher {
-	  private int id;
-	  private char sex;
-	  private String teacherName;
-	  private Course[] courses;
-	  //构造函数
-	  public Teacher() {
-	   super();
-	   
-	   courses= new Course[1];
-	  }
-	  public Teacher(int id,String teacherName,char i){
-	   this.id=id;
-	   this.teacherName=teacherName;
-	   this.sex=i;
-	   i ='男';
-	   courses = new Course[1];
-	  }
-	  char i ='男';
-	  //修改或是添加属性
-	  
-	  package experiment3;
-	  
-	  public class people {
-	  private int id;
-	  private char sex;
-	  private String peopleName;
-	  private Course[] courses;
-	  public people() {
-	   super();
-	   courses= new Course[1];
-	  }
-	  public people(int id,String peopleName,char sex){
-	    this.id=id;
-	    this.peopleName=peopleName;
-	    this.sex=sex;
-	    courses = new Course[1];
-	   }
-	
+
+    public Course(String coursesname, int number, String place, float time, float score) {
+        this.coursesname = coursesname;
+        this.number = number;
+        this.place = place;
+        this.time = time;
+        this.score = score;
+
+    }
+
+    public String toString() {
+        return   coursesname+    "(课程信息)" + "     课程编号：" + number + "   上课地点：" + place
+                + "    课程时间：" + time + "小时" + "     课程学分：" + score + "分";
+    }
+}
+教师
+public class Teacher extends people {  //子类
+    String lesson;
+    public Teacher(int number, String name, char sex, String lesson){
+        super(number,name,sex);
+        this.lesson = lesson;
+    }
+    public String toString(){
+        return   "Teacher(教师信息):" +"  编号：" + number
+                + "    姓名：" + name + "   性别：" + sex + "     所授课程：" + lesson;
+    }
+}
+text
+ public static void main(String[] args) {
+        int flag = 1;
+        Course s = null;
+        while (flag == 1) {
+            Scanner in = new Scanner(System.in);
+            Course a = s;      //对a进行初始化赋值
+            Student w = new Student(2019311129, "gyq", 'M',a);
+            System.out.println("学生信息");
+            System.out.println(w);
+            Teacher b = new Teacher(1, "GAO", 'M', "数学");
+            Teacher c = new Teacher(2, "LI", 'M', "化学");
+            Teacher d = new Teacher(3, "ZHANG", 'W', "英语");
+            System.out.println("教师信息");
+            System.out.println(b);
+            System.out.println(c);
+            System.out.println(d);
+            Course e = new Course("数学", 7, "101", 2, 2);
+            Course f = new Course("英语", 8, "102", 2, 3);
+            Course g = new Course("化学", 9, "103", 2, 4);
+            System.out.println("课程信息");
+            System.out.println(e);
+            System.out.println(f);
+            System.out.println(g);
 ```
 ## 实验图片
 
 
 ## 实验感想
+掌握继承的用法，通过构造方法实例化对象，学会面向对象的类设计方法，多加练习掌握此方法
 
